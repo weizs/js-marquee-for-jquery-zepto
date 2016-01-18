@@ -76,8 +76,10 @@
                     },
 
                     html: function(html){
-                        if(typeof html=='string'){
-                            $this.find('.js-marquee').html(html);
+                        $jsMarquee = $this.find('.js-marquee');
+                        var current = $jsMarquee.first().html();
+                        if(typeof html=='string' && current!=html){
+                            $jsMarquee.html(html);
                             adjust();
                         }
                     },
