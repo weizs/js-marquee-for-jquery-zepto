@@ -96,7 +96,7 @@
                 };
 
             //Check for methods
-            if (typeof options === 'string' || o.html) {
+            if (typeof options === 'string') {
 
                 if ($.isFunction(methods[options])) {
                     //Following two IF statements to support public methods
@@ -108,7 +108,7 @@
                     }
                     methods[options]();
                 }else{
-                    methods.html(o.html||options);
+                    methods.html(options);
                 }
 
                 return;
