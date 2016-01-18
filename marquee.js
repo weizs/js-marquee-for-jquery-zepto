@@ -120,6 +120,7 @@
             $.each(o, function(key, value) {
                 //Check if element has this data attribute
                 attr = $this.attr('data-' + key);
+                //if use Zepto and element don't has this data attribute value is null
                 if (attr!=null && typeof attr !== 'undefined') {
                     //Now check if value is boolean or not
                     switch (attr) {
