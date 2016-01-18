@@ -34,7 +34,7 @@
                     return '{' + tabjson.join(',') + '}';
                 },
 
-                _startAnimationWithDelay = function() {
+                _startAnimationWithDelay = function(animate) {
                     $this.timer = setTimeout(animate, o.delayBeforeStart);
                 },
 
@@ -381,7 +381,7 @@
                             $this.trigger('finished');
                             //animate again
                             if (o.pauseOnCycle) {
-                                _startAnimationWithDelay();
+                                _startAnimationWithDelay(animate);
                             } else {
                                 animate();
                             }
@@ -404,7 +404,7 @@
                     animate();
                 } else {
                     //Starts the recursive method
-                    _startAnimationWithDelay();
+                    _startAnimationWithDelay(animate);
                 }
             }
 
